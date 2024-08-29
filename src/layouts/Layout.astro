@@ -15,12 +15,28 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		
+		<script>
+			(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+			.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+			n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+			(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+			ml('account', '1079721');
+		</script>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 <style is:global>
+	@font-face {
+		font-family: 'WorkSans';
+		src: url('/fonts/WorkSans-VariableFont_wght.ttf') format('ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -32,19 +48,10 @@ const { title } = Astro.props;
 			white 60%
 		);
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	html, body {
+		font-family: 'WorkSans', sans-serif;
+		background: #000;
+		padding: 0;
+		margin: 0;
 	}
 </style>

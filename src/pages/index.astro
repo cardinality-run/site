@@ -8,6 +8,8 @@ import socialX from '../../public/social-x.svg?raw';
 import socialDiscord from '../../public/social-discord.svg?raw';
 import socialLinkedIn from '../../public/social-linkedin.svg?raw';
 
+const discordLink = 'https://discord.gg/Abkm7Ewhen';
+
 ---
 
 <Layout>
@@ -37,9 +39,8 @@ import socialLinkedIn from '../../public/social-linkedin.svg?raw';
             <ul class="feature-list">
                 <Card title="Easily add to existing applications" description="The Cardinality SDK can be integrated into any Flutter or Dart application."></Card>
                 <Card title="Full insights into your data" description="With the Cardinality web app you can see all your user sessions and analytic data in one place."></Card>
-                <Card title="Integrate querying language" description="Create and customize your own dashboards in the web app with the Cardinality Query Language (CQL)"></Card>
-
-                <Card title="Secret feature" description="And finally Cardinality will have another feature that will elevate the insights into your application to the next level."></Card>
+                <Card title="Integrated querying language" description="Create and customize your own dashboards in the web app with the Cardinality Query Language (CQL)"></Card>
+                <Card title="Secret feature" description="We are still cooking this secret Cardinality feature but it will elevate the insights into your application to the next level."></Card>
             </ul>
             <h3>How to get started?</h3>
             <p>
@@ -49,7 +50,7 @@ import socialLinkedIn from '../../public/social-linkedin.svg?raw';
             </p>
             <div class="actions">
                 <Button href="#header">Join the waitlist</Button>
-                <Button href="https://discord.gg/Abkm7Ewhen" target="_blank">Or join our Discord</Button>
+                <Button href={discordLink} target="_blank">Or join our Discord</Button>
             </div>
 		</div>
 	</main>
@@ -65,7 +66,7 @@ import socialLinkedIn from '../../public/social-linkedin.svg?raw';
 					</a>
 				</div>
 				<div class="social">
-					<a href="https://discord.gg/Abkm7Ewhen">
+					<a href={discordLink}>
 						<Fragment set:html={socialDiscord}></Fragment>
 					</a>
 				</div>

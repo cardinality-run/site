@@ -1,23 +1,53 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
 import Subscribe from '../components/Subscribe.astro';
 ---
 
 <Layout>
+	<header id="header">
+		<div class="content">
+			<img class="logo" src="logo.svg"></img>
+			<p class="presenting">PRESENTING CARDINALITY</p>
+			<h1>Start observing your Flutter apps</h1>
+			<p class="tagline">Subscribe to our waitlist to receive product updates and announcements</p>
+			<Subscribe></Subscribe>
+			<p class="trusted">Trusted by no-one (yet)</p>
+		</div>
+	</header>
 	<main>
-		<div class="header-wrapper">
-			<div class="header">
-				<img class="logo" src="logo.svg"></img>
-				<p class="presenting">PRESENTING CARDINALITY</p>
-				<h1>Start observing your Flutter apps</h1>
-				<p class="tagline">Subscribe to our waitlist to receive product updates and announcements</p>
-				<Subscribe></Subscribe>
-				<p class="trusted">Trusted by no-one (yet)</p>
-			</div>
+		<div class="content">
+			<h3>Cardinality is an app insights platform.</h3>
+            <p>
+                Cardinality is a platform that offers a wide array of tools to enhance 
+                insights into your product. Understanding how users interact with your product isn't 
+                easy.
+                Cardinality can assist you in gathering and navigating app data so that you can focus 
+                on what's important: your users.
+            </p>
+            <h3>Features</h3>
+            <ul class="feature-list">
+                <Card title="Easily add to existing applications" description="The Cardinality SDK can be integrated into any Flutter or Dart application."></Card>
+                <Card title="Full insights into your data" description="With the Cardinality web app you can see all your user sessions and analytic data in one place."></Card>
+                <Card title="Integrate querying language" description="Create and customize your own dashboards in the web app with the Cardinality Query Language (CQL)"></Card>
+
+                <Card title="Secret feature" description="And finally Cardinality will have another feature that will elevate the insights into your application to the next level."></Card>
+            </ul>
+            <h3>How to get started?</h3>
+            <p>
+                We are currently working on getting the first release of Cardinality out in Q4 of 2024.
+                If you want to stay updated, you can subscribe to our waiting list or join the Cardinality discord
+                where you will be able to talk to us and the community directly!
+            </p>
+            <div class="actions">
+                <Button href="#header">Subscribe</Button>
+                <Button href="https://discord.gg/Abkm7Ewhen" target="_blank">Or join the Discord</Button>
+            </div>
 		</div>
 	</main>
 	<footer>
-		<div class="footer-content">
+		<div class="content">
 			<div class="left">
 				© Cardinality • All Rights Reserved
 			</div>
@@ -38,25 +68,35 @@ import Subscribe from '../components/Subscribe.astro';
 
 <style>
 	main {
-		margin: auto;
-		padding: 2rem;
-		width: 800px;
-		max-width: calc(100% - 4rem);
+		background-color: #0a0a0a;
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 	}
+	.actions {
+		display: flex;
+		gap: 1rem;
+		flex-direction: row;
+	}
+
+    @media only screen and (max-width: 400px) {
+        .actions {
+			flex-direction: column;
+        }
+    }
+	.content {
+		margin: auto;
+		padding: 2rem;
+		width: 800px;
+		max-width: calc(100% - 4rem);
+	}
 	footer {
-		background-color: #0a0a0a;
 		color: white;
 		font-size: 18px;
 		line-height: 1.6;
 	}
-	.footer-content {
-		margin: auto;
+	footer .content {
 		padding: 2rem 1rem;
-		width: 800px;
-		max-width: calc(100% - 4rem);
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -81,18 +121,22 @@ import Subscribe from '../components/Subscribe.astro';
 	.social img {
 		max-width: 100%;
 	}
-	.header-wrapper {
+	header {
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+		max-height: 100vh;
+		text-align: center;
+		position: relative;
+	}
+	header .content {
 		width: 100%;
 		height: 100vh;
-		text-align: center;
-		display:block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
-	.header {
-		height: 100vh;
-		display: table-cell;
-    	vertical-align: middle;   
-	}
-
 	a {
 		color: rgb(217, 217, 217);
 		text-decoration: none;
@@ -108,7 +152,7 @@ import Subscribe from '../components/Subscribe.astro';
 		margin-top: -2em;
 	}
 	h1 {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
@@ -131,13 +175,13 @@ import Subscribe from '../components/Subscribe.astro';
 
 	}
 	p.trusted {
-		margin-top: 0.75rem;
+		margin-top: 0.5rem;
 		font-size: 1rem;
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 2em;
 	}
-	.link-card-grid {
+	.feature-list {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;

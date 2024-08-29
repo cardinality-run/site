@@ -1,9 +1,8 @@
 ---
 interface Props {
-	title: string;
 }
 
-const { title } = Astro.props;
+const {  } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,6 +12,7 @@ const { title } = Astro.props;
 		
 		<meta name="description" content="Start observing your Flutter apps" />
 		<meta property="image" content="https://cardinality.run/home.png" />
+		<title>Cardinality</title>
 
 		<!-- Open Graph Data -->
 		<meta property="og:url" content="https://cardinality.run" />
@@ -38,7 +38,6 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 		
 		<script>
 			// @ts-ignore

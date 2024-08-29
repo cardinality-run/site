@@ -11,7 +11,7 @@ const { href, target } = Astro.props;
     <slot />
 </a>
 
-<style>
+<style is:global>
     .button {
         text-align: center;
         display: inline;
@@ -33,5 +33,10 @@ const { href, target } = Astro.props;
     .button:hover {
         background-color: rgb(var(--accent)) !important;
         border-color: rgb(var(--accent)) !important;
+    }
+    .button[disabled="disabled"] {
+        background-color:  rgb(var(--accent-dark)) !important;
+        border-color: rgb(var(--accent-dark)) !important;
+        opacity: 0.5;
     }
 </style>

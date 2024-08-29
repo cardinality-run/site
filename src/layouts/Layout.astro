@@ -10,9 +10,33 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<meta name="description" content="Start observing your Flutter apps" />
+		<meta property="image" content="https://cardinality.run/home.png" />
+
+		<!-- Open Graph Data -->
+		<meta property="og:url" content="https://cardinality.run" />
+		<meta property="og:title" content="Cardinality" />
+		<meta name="og:description" content="Start observing your Flutter apps" />
+		<meta property="og:image" content="https://cardinality.run/home.png" />
+
+  		<!-- Twitter Share Data -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:creator" content="@cardinality_run" />
+		<meta property="twitter:title" content="Cardinality" />
+		<meta property="twitter:description" content="Start observing your Flutter apps" />
+		<meta property="twitter:image" content="https://cardinality.run/home.png" />
+		<meta property="twitter:site" content="@cardinality_run" />
+
+  		<!-- iOS meta tags & icons -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Cardinality">
+		
+		<meta name="theme-color" content="#F5351E">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		

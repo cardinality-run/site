@@ -3,12 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
 import Subscribe from '../components/Subscribe.astro';
+import logo from '../../public/logo.svg?raw';
+import socialX from '../../public/social-x.svg?raw';
+import socialDiscord from '../../public/social-discord.svg?raw';
+import socialLinkedIn from '../../public/social-linkedin.svg?raw';
+
 ---
 
 <Layout>
 	<header id="header">
 		<div class="content">
-			<img class="logo" src="logo.svg"></img>
+			<div class="logo">
+				<Fragment set:html={logo}></Fragment>
+			</div>
 			<p class="presenting">PRESENTING CARDINALITY</p>
 			<h1>Start observing your Flutter apps</h1>
 			<p class="tagline">Subscribe to our waitlist to receive product updates and announcements</p>
@@ -53,13 +60,19 @@ import Subscribe from '../components/Subscribe.astro';
 			</div>
 			<div class="right">
 				<div class="social">				
-					<a href="https://x.com/cardinality_run"><img src="social-x.svg"></img></a>
+					<a href="https://x.com/cardinality_run">
+						<Fragment set:html={socialX}></Fragment>
+					</a>
 				</div>
 				<div class="social">
-					<a href="https://discord.gg/Abkm7Ewhen"><img src="social-discord.svg"></img></a>
+					<a href="https://discord.gg/Abkm7Ewhen">
+						<Fragment set:html={socialDiscord}></Fragment>
+					</a>
 				</div>
 				<div class="social">
-					<a href="https://www.linkedin.com/company/cardinality_run/"><img src="social-linkedin.svg"></img></a>
+					<a href="https://www.linkedin.com/company/cardinality_run/">
+						<Fragment set:html={socialLinkedIn}></Fragment>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -68,8 +81,8 @@ import Subscribe from '../components/Subscribe.astro';
 
 <style>
 	main {
-		background-color: #0a0a0a;
-		color: white;
+		background-color: rgb(var(--background-content));
+		color: rgb(var(--foreground-content));
 		font-size: 20px;
 		line-height: 1.6;
 	}
@@ -91,7 +104,6 @@ import Subscribe from '../components/Subscribe.astro';
 		max-width: calc(100% - 4rem);
 	}
 	footer {
-		color: white;
 		font-size: 18px;
 		line-height: 1.6;
 	}
@@ -118,11 +130,11 @@ import Subscribe from '../components/Subscribe.astro';
 		padding: 1rem;
 		margin-left: 1rem;
 	}
-	.social img {
-		max-width: 100%;
+	.social a {
+		color: rgb(var(--foreground-content));
+		text-decoration: none;
 	}
 	header {
-		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 		max-height: 100vh;
@@ -137,16 +149,10 @@ import Subscribe from '../components/Subscribe.astro';
 		align-items: center;
 		flex-direction: column;
 	}
-	a {
-		color: rgb(217, 217, 217);
-		text-decoration: none;
-	}
-	a:hover {
-		color: white;
-	}
-	.logo {
+	header .content .logo {
 		width: 8rem;
-		display: block;
+		height: 8rem;
+		display: inline-block;
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: -2em;
@@ -163,6 +169,7 @@ import Subscribe from '../components/Subscribe.astro';
 		font-size: 1rem;
 		line-height: 1.5;
 		text-align: center;
+		margin-top: 1em;
 		margin-bottom: 1em;
 		letter-spacing: 0.5rem;
 	}
